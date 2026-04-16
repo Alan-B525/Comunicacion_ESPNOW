@@ -36,6 +36,7 @@ Comunicacion_ESPNOW/
 ├── examples/
 │   └── tdma_node_example.cpp    # Código base para nodos (modificar NODE_ID y MAC)
 ├── plot.py                      # Visualizador en tiempo real
+├── save_to_csv.py               # Logger serial a CSV
 ├── platformio.ini               # Configuración de build
 └── PROJECT_INIT.md              # Este archivo
 ```
@@ -153,6 +154,18 @@ python plot.py
 - Gráfico superior: Datos en tiempo real.
 - Consola inferior: Últimos 10 mensajes del basestation.
 - Actualiza cada 1 segundo.
+
+## Logging a CSV (save_to_csv.py)
+
+### Uso
+```bash
+python save_to_csv.py --port COM10 --output medicion.csv
+```
+
+- Escucha líneas `DATA,...,VALUES=...` del basestation.
+- Guarda una fila por muestra con `timestamp` y `sample_value`.
+- Si no pasas `--output`, crea `basestation_log_YYYYMMDD_HHMMSS.csv`.
+- Finaliza con `Ctrl+C`.
 
 ---
 

@@ -3,3 +3,10 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
+
+# Python virtual environment and caches
+.venv/
+.tmp/
+__pycache__/
+*.py[cod]
+.pytest_cache/

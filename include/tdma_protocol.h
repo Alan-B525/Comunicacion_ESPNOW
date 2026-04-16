@@ -4,7 +4,7 @@
 
 #define TDMA_MAX_NODES 10
 #define TDMA_MAX_SAMPLES_PER_PACKET 8
-#define TDMA_SYNC_VERSION 1
+#define TDMA_SYNC_VERSION 2
 #define TDMA_DATA_HEADER_SIZE 10
 
 enum PacketType : uint8_t {
@@ -23,6 +23,7 @@ typedef struct __attribute__((packed)) {
     uint16_t guard_us;
     uint32_t epoch_us;
     uint32_t sync_id;
+    uint64_t unix_time_us;
 } SyncPacket;
 
 typedef struct __attribute__((packed)) {
